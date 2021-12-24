@@ -1,11 +1,16 @@
+import java.util.Scanner;
+
 public class Main {
 
     public static int saldo;
     public static int penarikan;
     public static int transfer;
 
+
+
     public static void main(String[] args) {
 
+        viewLoginSistem();
     }
 
     /**
@@ -93,12 +98,27 @@ public class Main {
 //    }
 
     /**
-     *Menampilkan View pilihan bahasa
+     * View Login sistem
      */
+    public static void viewLoginSistem(){
 
-    /**
-     * Menampilkan Menu Login (User & Password)
-     */
+        Scanner inputUser = new Scanner(System.in);
+
+        System.out.print("Input User Name : ");
+        String userName = inputUser.nextLine();
+        System.out.print("Input password : ");
+        String password = inputUser.nextLine();
+
+        if (userName.equals("suhendri") && password.equals("123456")){
+            showTransaksi();
+        }else {
+            System.out.println("Try Again, your input it's Wrong!");
+        }
+
+
+
+
+    }
 
     /**
      * View Menu Transaksi
