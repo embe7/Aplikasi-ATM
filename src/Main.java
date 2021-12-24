@@ -5,6 +5,7 @@ public class Main {
     public static int saldo;
     public static int penarikan;
     public static int transfer;
+    public static int stor;
 
 
 
@@ -114,10 +115,6 @@ public class Main {
         }else {
             System.out.println("Try Again, your input it's Wrong!");
         }
-
-
-
-
     }
 
     /**
@@ -142,17 +139,17 @@ public class Main {
     }
 
     /**
-     * View Tarik Tunai
+     * View Stor Tunai
      */
-    public static void viewTarikTunai(){
+    public static void viewStorTunai(){
+        Scanner ipt = new Scanner(System.in);
+        System.out.println("Stor Tunai");
 
-    }
+        System.out.print("Masukkan Jumlah Stor Tunai : RP.");
+        var data = ipt.nextInt();
 
-    /**
-     * View Transfer
-     */
-    public static void viewTransfer(){
-
+        int total = data + saldo;
+        showStorTunai(total);
     }
 
     /**
@@ -163,9 +160,22 @@ public class Main {
     }
 
     /**
-     * View Stor Tunai
+     * View Tarik Tunai
      */
-    public static void viewStorTunai(){
+    public static void viewTarikTunai(){
+        Scanner inputUser = new Scanner(System.in);
+        System.out.println("Menu Tarik Tunai");
+
+            System.out.print("Masukkan jumlah penarikan : Rp.");
+            int data = inputUser.nextInt();
 
     }
+
+    /**
+     * View Transfer
+     */
+    public static void viewTransfer(){
+
+    }
+
 }
