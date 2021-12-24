@@ -140,23 +140,38 @@ public class Main {
 
     /**
      * View Stor Tunai
+     * belom siap
      */
     public static void viewStorTunai(){
         Scanner ipt = new Scanner(System.in);
-        System.out.println("Stor Tunai");
 
-        System.out.print("Masukkan Jumlah Stor Tunai : RP.");
-        var data = ipt.nextInt();
+            System.out.println("Stor Tunai");
 
-        int total = data + saldo;
-        showStorTunai(total);
+            System.out.print("Masukkan Jumlah Stor Tunai : RP.");
+            var data = ipt.nextInt();
+
+            int total = data + saldo;
+            showStorTunai(total);
+
+            while (true){
+                System.out.print("menu Transaksi (X) : ");
+                String kembali = ipt.nextLine();
+                if (kembali.equals("x")){
+                    viewTransaksi();
+                    break;
+                }else {
+                    System.out.println("Input tidak dikenal");
+
+                }
+            }
     }
 
     /**
      * View Cek saldo
      */
     public static void viewCekSaldo(){
-
+        System.out.println("Menu Saldo");
+        showCekSaldo();
     }
 
     /**
