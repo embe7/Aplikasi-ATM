@@ -10,7 +10,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        viewLoginSistem();
+        viewTransaksi();
     }
 
     /**
@@ -123,20 +123,49 @@ public class Main {
     /**
      * View Menu Transaksi
      */
+    public static void viewTransaksi(){
+        Scanner inputUser = new Scanner(System.in);
+
+        showTransaksi();
+
+        System.out.print("silahkan pilih transaksi(masukkan nomor transaksi) : ");
+        String inp = inputUser.nextLine();
+        if (inp.equals("1")){
+            viewTarikTunai();
+        }else if (inp.equals("2")){
+            viewTransfer();
+        }else if (inp.equals("3")){
+            viewStorTunai();
+        }else if (inp.equals("4")){
+            viewStorTunai();
+        }
+    }
 
     /**
      * View Tarik Tunai
      */
+    public static void viewTarikTunai(){
+
+    }
 
     /**
      * View Transfer
      */
+    public static void viewTransfer(){
+
+    }
 
     /**
      * View Cek saldo
      */
+    public static void viewCekSaldo(){
+
+    }
 
     /**
      * View Stor Tunai
      */
+    public static void viewStorTunai(){
+
+    }
 }
