@@ -99,6 +99,17 @@ public class Main {
 //    }
 
     /**
+     * Input Data
+     */
+    public static String input(String info){
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print(info + " : ");
+        String data = scanner.nextLine();
+        return data;
+    }
+
+    /**
      * View Login sistem
      */
     public static void viewLoginSistem(){
@@ -134,13 +145,12 @@ public class Main {
         }else if (inp.equals("3")){
             viewStorTunai();
         }else if (inp.equals("4")){
-            viewStorTunai();
+            viewCekSaldo();
         }
     }
 
     /**
      * View Stor Tunai
-     * belom siap
      */
     public static void viewStorTunai(){
         Scanner ipt = new Scanner(System.in);
@@ -154,16 +164,14 @@ public class Main {
             showStorTunai(total);
 
             while (true){
-                System.out.print("menu Transaksi (X) : ");
-                String kembali = ipt.nextLine();
-                if (kembali.equals("x")){
+                 var input = input("kembali ke Menu Transaksi (x)");
+                if (input.equals("x")){
                     viewTransaksi();
-                    break;
                 }else {
-                    System.out.println("Input tidak dikenal");
-
+                    System.out.println("Pilihan tidak dimengerti");
                 }
             }
+
     }
 
     /**
