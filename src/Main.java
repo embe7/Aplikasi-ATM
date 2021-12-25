@@ -181,17 +181,31 @@ public class Main {
     public static void viewCekSaldo(){
         System.out.println("====Menu Saldo=====");
         showCekSaldo();
+        while (true) {
+            var input = input("kembali ke Menu Transaksi (x)");
+            if (input.equals("x")) {
+                viewTransaksi();
+            } else {
+                System.out.println("Pilihan tidak dimengerti");
+            }
+        }
     }
 
     /**
      * View Tarik Tunai
      */
-    public static void viewTarikTunai(){
-        Scanner inputUser = new Scanner(System.in);
-        System.out.println("Menu Tarik Tunai");
+    public static void viewTarikTunai() {
+            Scanner inputUser = new Scanner(System.in);
+            System.out.println("Menu Tarik Tunai");
 
             System.out.print("Masukkan jumlah penarikan : Rp.");
             int data = inputUser.nextInt();
+
+
+            penarikan = data - saldo;
+            System.out.println("SUCCESS, jumlah penarikan Rp." + penarikan);
+
+
 
     }
 
