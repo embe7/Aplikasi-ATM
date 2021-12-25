@@ -5,6 +5,7 @@ public class Main {
     public static int saldo;
     public static int penarikan;
     public static int transfer;
+    public static int jumlah;
     public static int stor;
 
 
@@ -73,7 +74,7 @@ public class Main {
      * Stor Tunai
      */
     public static void showStorTunai(int stor){
-        var jumlah = saldo + stor;
+         jumlah = saldo + stor;
         if (stor < 50000){
             System.out.println("Minimal stor tunai Rp.50000");
         }else {
@@ -90,7 +91,7 @@ public class Main {
      * Cek Saldo
      */
     public static void showCekSaldo(){
-        System.out.println(saldo);
+        System.out.println("Saldo Anda Saat Ini Rp."+jumlah);
     }
     //test showCekSaldo
 //    public static void testShowCekSaldo(){
@@ -155,13 +156,13 @@ public class Main {
     public static void viewStorTunai(){
         Scanner ipt = new Scanner(System.in);
 
-            System.out.println("Stor Tunai");
+            System.out.println("====Stor Tunai====");
 
             System.out.print("Masukkan Jumlah Stor Tunai : RP.");
             var data = ipt.nextInt();
 
-            int total = data + saldo;
-            showStorTunai(total);
+            stor = data + saldo;
+            showStorTunai(stor);
 
             while (true){
                  var input = input("kembali ke Menu Transaksi (x)");
@@ -178,7 +179,7 @@ public class Main {
      * View Cek saldo
      */
     public static void viewCekSaldo(){
-        System.out.println("Menu Saldo");
+        System.out.println("====Menu Saldo=====");
         showCekSaldo();
     }
 
