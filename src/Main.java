@@ -39,8 +39,7 @@ public class Main {
             }else if (penarikan < 50000){
                 System.out.println("Minimal Penarikan Rp.50000");
             }else {
-                var jumlah = saldo - penarikan;
-                System.out.println("SUCCESS, sisa saldo anda = Rp." + jumlah);
+                System.out.println("SUCCESS");
             }
     }
     //Test showTarikTunai
@@ -73,12 +72,12 @@ public class Main {
     /**
      * Stor Tunai
      */
-    public static void showStorTunai(int stor){
-         jumlah = saldo + stor;
+    public static void showStorTunai(){
+         saldo = saldo + stor;
         if (stor < 50000){
             System.out.println("Minimal stor tunai Rp.50000");
         }else {
-            System.out.println("SUCESS, total saldo anda = Rp." + jumlah);
+            System.out.println("SUCESS, total saldo anda = Rp." + saldo);
         }
     }
     //Test showStorTunai
@@ -91,7 +90,8 @@ public class Main {
      * Cek Saldo
      */
     public static void showCekSaldo(){
-        System.out.println("Saldo Anda Saat Ini Rp."+jumlah);
+        saldo = jumlah;
+        System.out.println("Saldo Anda Saat Ini Rp."+ saldo);
     }
     //test showCekSaldo
 //    public static void testShowCekSaldo(){
@@ -161,8 +161,9 @@ public class Main {
             System.out.print("Masukkan Jumlah Stor Tunai : RP.");
             var data = ipt.nextInt();
 
-            stor = data + saldo;
-            showStorTunai(stor);
+            jumlah = saldo + data;
+
+
 
             while (true){
                  var input = input("kembali ke Menu Transaksi (x)");
@@ -201,9 +202,9 @@ public class Main {
             System.out.print("Masukkan jumlah penarikan : Rp.");
             int data = inputUser.nextInt();
 
+            showTarikTunai();
 
-            penarikan = data - saldo;
-            System.out.println("SUCCESS, jumlah penarikan Rp." + penarikan);
+
 
 
 
