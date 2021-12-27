@@ -34,6 +34,7 @@ public class Main {
      *Tarik Tunai
      */
     public static void showTarikTunai(){
+        saldo = saldo - penarikan;
             if (saldo < penarikan){
                 System.out.println("saldo tidak cukup");
             }else if (penarikan < 50000){
@@ -45,7 +46,7 @@ public class Main {
     //Test showTarikTunai
 //    public static void testShowTarikTunai(){
 //        saldo = 300000;
-//        penarikan =30000;
+//        penarikan =3000000;
 //        showTarikTunai();
 //    }
 
@@ -73,11 +74,11 @@ public class Main {
      * Stor Tunai
      */
     public static void showStorTunai(){
-         saldo = saldo + stor;
         if (stor < 50000){
             System.out.println("Minimal stor tunai Rp.50000");
         }else {
-            System.out.println("SUCESS, total saldo anda = Rp." + saldo);
+            saldo = stor + saldo;
+            System.out.println("SUCESS, Telah di Stor = Rp." + stor);
         }
     }
     //Test showStorTunai
@@ -90,7 +91,6 @@ public class Main {
      * Cek Saldo
      */
     public static void showCekSaldo(){
-        saldo = jumlah;
         System.out.println("Saldo Anda Saat Ini Rp."+ saldo);
     }
     //test showCekSaldo
@@ -153,18 +153,15 @@ public class Main {
     /**
      * View Stor Tunai
      */
-    public static void viewStorTunai(){
+    public static void viewStorTunai() {
         Scanner ipt = new Scanner(System.in);
 
-            System.out.println("====Stor Tunai====");
+        System.out.println("====Stor Tunai====");
 
-            System.out.print("Masukkan Jumlah Stor Tunai : RP.");
-            var data = ipt.nextInt();
+        System.out.print("Masukkan Jumlah Stor Tunai : RP.");
+        stor = ipt.nextInt();
 
-            jumlah = saldo + data;
-
-
-
+        showStorTunai();
             while (true){
                  var input = input("kembali ke Menu Transaksi (x)");
                 if (input.equals("x")){
@@ -200,13 +197,7 @@ public class Main {
             System.out.println("Menu Tarik Tunai");
 
             System.out.print("Masukkan jumlah penarikan : Rp.");
-            int data = inputUser.nextInt();
-
-            showTarikTunai();
-
-
-
-
+            penarikan = inputUser.nextInt();
 
     }
 
