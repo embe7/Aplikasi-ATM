@@ -34,12 +34,12 @@ public class Main {
      *Tarik Tunai
      */
     public static void showTarikTunai(){
-        saldo = saldo - penarikan;
-            if (saldo < penarikan){
-                System.out.println("saldo tidak cukup");
-            }else if (penarikan < 50000){
+            if (penarikan < 50000){
                 System.out.println("Minimal Penarikan Rp.50000");
+            }else if (saldo < penarikan){
+                System.out.println("saldo tidak cukup");
             }else {
+                saldo = saldo - penarikan;
                 System.out.println("SUCCESS");
             }
     }
@@ -198,6 +198,17 @@ public class Main {
 
             System.out.print("Masukkan jumlah penarikan : Rp.");
             penarikan = inputUser.nextInt();
+
+            showTarikTunai();
+
+            while (true){
+                var input = input("kembali ke Menu Transaksi (x)");
+                if (input.equals("x")){
+                    viewTransaksi();
+                }else {
+                    System.out.println("Pilihan tidak dimengerti");
+                }
+            }
 
     }
 
