@@ -54,18 +54,18 @@ public class Main {
      * Transfer
      */
     public static void showTransfer(){
-        if (saldo < transfer){
-            System.out.println("Jumlah Saldo Tidak mencukupi");
-        }else if(transfer < 20000){
+        if (transfer < 20000){
             System.out.println("Minimal Transfer Rp.20000");
+        }else if(saldo < transfer){
+            System.out.println("Saldo Tidak Mencukupi");
         }else{
-            var jumlah = saldo - transfer;
-            System.out.println("SUCCESS, sisa saldo anda = Rp." + jumlah);
+            saldo = saldo - transfer;
+            System.out.println("SUCCESS, Telah di Transfer = Rp." + transfer);
         }
     }
     //test showTransfer
 //    public static void testShowTransfer(){
-//        saldo = 50000;
+//        saldo = 5000;
 //        transfer = 20000;
 //        showTransfer();
 //    }
@@ -216,7 +216,21 @@ public class Main {
      * View Transfer
      */
     public static void viewTransfer(){
+        Scanner inputUser = new Scanner(System.in);
+        System.out.println("==== Menu Transfer ====");
 
+        System.out.print("Masukkan jumlah yang ingin di Transfer : Rp.");
+        transfer = inputUser.nextInt();
+        showTransfer();
+
+        while (true) {
+            var input = input("kembali ke Menu Transaksi (x)");
+            if (input.equals("x")) {
+                viewTransaksi();
+            } else {
+                System.out.println("Pilihan tidak dimengerti");
+            }
+        }
     }
 
 }
