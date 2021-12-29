@@ -5,16 +5,12 @@ public class Main {
     public static int saldo;
     public static int penarikan;
     public static int transfer;
-    public static int jumlah;
     public static int stor;
     public static String UserName;
     public static String Password;
 
-
-
     public static void main(String[] args) {
         viewLoginSistem();
-
     }
 
     /**
@@ -261,5 +257,4 @@ public class Main {
             }
         }
     }
-
 }
