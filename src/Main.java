@@ -7,19 +7,20 @@ public class Main {
     public static int transfer;
     public static int jumlah;
     public static int stor;
+    public static String UserName;
+    public static String Password;
 
 
 
     public static void main(String[] args) {
+        viewLoginSistem();
 
-        viewTransaksi();
     }
 
     /**
      *Menampilkan Transaksi
      */
     public static void showTransaksi(){
-        System.out.println("====Menu Transaksi====");
         System.out.println("1. Tarik Tunai");
         System.out.println("2. Transfer");
         System.out.println("3. Stor Tunai");
@@ -100,6 +101,24 @@ public class Main {
 //    }
 
     /**
+     * Login Sistem
+     */
+    public static void showLoginSistem(){
+
+        if (UserName.equals("suhendri") & Password.equals("123456")){
+            viewTransaksi();
+        }else {
+            System.out.println("User Name & Password Salah");
+        }
+    }
+    //test Login Sistem
+//    public static void testLoginSistem(){
+//        UserName = "suhendri";
+//        Password = "123456";
+//        showLoginSistem();
+//    }
+
+    /**
      * Input Data
      */
     public static String input(String info){
@@ -117,15 +136,22 @@ public class Main {
 
         Scanner inputUser = new Scanner(System.in);
 
-        System.out.print("Input User Name : ");
-        String userName = inputUser.nextLine();
-        System.out.print("Input password : ");
-        String password = inputUser.nextLine();
+        System.out.println("====Login====");
 
-        if (userName.equals("suhendri") && password.equals("123456")){
-            showTransaksi();
-        }else {
-            System.out.println("Try Again, your input it's Wrong!");
+        System.out.print("Input User Name : ");
+        UserName = inputUser.nextLine();
+        System.out.print("Input password : ");
+        Password = inputUser.nextLine();
+
+        showLoginSistem();
+
+        while (true){
+            var input = input("ulangi (x)");
+            if (input.equals("x")){
+                viewLoginSistem();
+            }else {
+                System.out.println("Pilihan tidak dimengerti");
+            }
         }
     }
 
@@ -133,7 +159,10 @@ public class Main {
      * View Menu Transaksi
      */
     public static void viewTransaksi(){
+
         Scanner inputUser = new Scanner(System.in);
+
+        System.out.println("====Menu Transaksi====");
 
         showTransaksi();
 
@@ -194,7 +223,7 @@ public class Main {
      */
     public static void viewTarikTunai() {
             Scanner inputUser = new Scanner(System.in);
-            System.out.println("Menu Tarik Tunai");
+            System.out.println("====Menu Tarik Tunai====");
 
             System.out.print("Masukkan jumlah penarikan : Rp.");
             penarikan = inputUser.nextInt();
